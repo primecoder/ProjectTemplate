@@ -7,6 +7,8 @@ Providing a template for starting a new project
 └── ProjectTemplate/
     ├── Documentation/
     │   ├── CodingGuideline.md
+    │   ├── Dependencies-android.md
+    │   ├── Dependencies-iOS.md
     │   ├── README.md
     │   ├── SourceCodeManagement.md
     │   └── res/
@@ -22,6 +24,7 @@ Providing a template for starting a new project
     │       └── README.md
     └── script/
         └── README.md
+        
 ```
 
 ## How to use ProjectTemplate
