@@ -4,27 +4,27 @@ Providing a template for starting a new project
 ## Recommended Directory Structure
 
 ```
-└── ProjectTemplate/
-    ├── Documentation/
-    │   ├── CodingGuideline.md
-    │   ├── Dependencies-android.md
-    │   ├── Dependencies-iOS.md
-    │   ├── README.md
-    │   ├── SourceCodeManagement.md
-    │   └── res/
-    │       └── images/
-    │           └── gitflow.png
+ProjectTemplate
+├── .gitignore
+├── Documentation
+│   ├── CodingGuideline.md
+│   ├── Dependencies-android.md
+│   ├── Dependencies-iOS.md
+│   ├── README.md
+│   ├── SourceCodeManagement.md
+│   └── res
+│       └── images
+├── README.md
+├── dev
+│   ├── android
+│   │   └── README.md
+│   ├── artworks
+│   │   └── README.md
+│   └── iOS
+│       └── README.md
+└── script
     ├── README.md
-    ├── dev/
-    │   ├── android/
-    │   │   └── README.md
-    │   ├── artworks/
-    │   │   └── README.md
-    │   └── iOS/
-    │       └── README.md
-    └── script/
-        └── README.md
-        
+    └── setup-project        
 ```
 
 ## How to use ProjectTemplate

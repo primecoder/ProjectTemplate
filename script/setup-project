@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+# Copy directory structure and template files to the destination path.
+#
+
+function usage() {
+  echo $ $0 [DESTINATION_PATH]
+}
+
+function isDir() {
+  echo Looking for $1
+  if [ -d $1 ] ; then
+    return 0
+  else
+    return -1
+  fi
+}
+
+if [ "$1" == "" ] ; then
+  usage
+  exit -1
+fi
+
+SRC_DIR=../
+DST_DIR=$1
+CUR_DIR=`pwd`
+TAR_FILE="$DST_DIR/temp.tar"
+
+if ! isDir $DST_DIR ; then
+  echo "Cannot find directory $DST_DIR"
+  exit -1
+fi
+
+echo "Creating archive file."
+cd $SRC_DIR
+if [ -f $TAR_FILE ] ; then
+  rm -f $TAR_FILE
+fi
+for f in $( find . | grep -ve ".git\/\.*" ) ; do
+  if [ -f $f ] ; then
+    tar rvf $TAR_FILE $f
+  fi
+done
+
+echo "Writing files to $DST_DIR..."
+tar -C $DST_DIR -xvf $TAR_FILE
+
+echo "Clean up"
+if [ -f $TAR_FILE ] ; then
+  rm -f $TAR_FILE
+fi
+
+echo "Done"
