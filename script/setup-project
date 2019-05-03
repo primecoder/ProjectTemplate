@@ -38,7 +38,7 @@ if [ -f $TAR_FILE ] ; then
 fi
 for f in $( find . | grep -ve ".git\/\.*" ) ; do
   if [ -f $f ] ; then
-    tar rvf $TAR_FILE $f
+    tar rf $TAR_FILE $f
   fi
 done
 
