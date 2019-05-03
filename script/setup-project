@@ -43,7 +43,7 @@ for f in $( find . | grep -ve ".git\/\.*" ) ; do
 done
 
 echo "Writing files to $DST_DIR..."
-tar -C $DST_DIR -xvf $TAR_FILE
+tar -C $DST_DIR -xvkf $TAR_FILE
 
 echo "Clean up"
 if [ -f $TAR_FILE ] ; then
