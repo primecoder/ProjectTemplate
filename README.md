@@ -7,11 +7,6 @@ Providing a template for starting a new project
 ProjectTemplate
 ├── .gitignore
 ├── Documentation
-│   ├── CodingGuideline.md
-│   ├── Dependencies-android.md
-│   ├── Dependencies-iOS.md
-│   ├── README.md
-│   ├── SourceCodeManagement.md
 │   └── res
 │       └── images
 ├── README.md
