@@ -1,4 +1,4 @@
-Source: [Github Development Standard/commond](https://github.com/MLSDev/development-standards/blob/master/common/common.md)s
+Source: [Github Development Standard/commond](https://github.com/MLSDev/development-standards/blob/master/common/common.md)
 
 # Common
 
