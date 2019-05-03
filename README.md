@@ -58,5 +58,3 @@ ProjectTemplate
 1. Push your changes to Github
 
 1. (Optional) Delete ProjectTemplate folder
-
-TO_BE_CONTINUE...
