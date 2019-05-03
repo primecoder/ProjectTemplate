@@ -46,8 +46,13 @@ echo "Writing files to $DST_DIR..."
 tar -C $DST_DIR -xvkf $TAR_FILE
 
 echo "Clean up"
+# Remove the archive file.
 if [ -f $TAR_FILE ] ; then
   rm -f $TAR_FILE
+fi
+# Remove the setup script.
+if [ -f $DST_DIR/script/$0 ] ; then
+  rm -f $DST_DIR/script/$0
 fi
 
 echo "Done"
