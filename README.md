@@ -40,6 +40,16 @@ ProjectTemplate
   $ git clone git@github.com:[YOUR_GITHUB_USERID]/[PROJECT_NAME].git
   ```
 
+1. Prepare your project for update.
+
+  You might like to prepare your branches here for modification, review, and
+  merging.
+
+  * Create a new branch (i.e. from 'develop' branch, depends on you branching
+    model)
+  * Checkout to your new branch. This is where all the modification will be
+    made
+
 1. Run script `setup-project` from ProjectTemplate/script directory
 
   ```
@@ -53,7 +63,7 @@ ProjectTemplate
 
   1. Add project specific contents
 
-1. Commit your changes
+1. Review, merge, and commit your changes
 
 1. Push your changes to Github
 
