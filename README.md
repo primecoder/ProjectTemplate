@@ -4,22 +4,23 @@ Providing a template for starting a new project
 ## Recommended Directory Structure
 
 ```
-ProjectTemplate
-├── .gitignore
+.
 ├── Documentation
-│   └── res
-│       └── images
+│   ├── res
+│   │   └── images
 ├── README.md
 ├── dev
 │   ├── android
 │   │   └── README.md
 │   ├── artworks
 │   │   └── README.md
-│   └── iOS
-│       └── README.md
+│   ├── iOS
+│   │   └── README.md
+│   └── playground
+│       └── README.md
 └── script
     ├── README.md
-    └── setup-project        
+    └── setup-project
 ```
 
 ## How to use ProjectTemplate
@@ -57,7 +58,26 @@ ProjectTemplate
   $ setup-project ~/temp/[PROJECT_NAME]
   ```
 
-1. Modify your project's contents
+1. Build your playground with Cocoapods
+
+  ```
+  cd [YOUR_PROJECT_DIR]/dev/playground
+  $ pod install
+  ```
+
+1. Open playground workspace
+
+  ```
+  $ open ProjectPlayground.xcworkspace
+  ```
+
+1. Build Xcode project 'ProjectForPlayground' and try out several pages in Playground.
+  All external frameworks should load correctly and all playground's pages should
+  run without any error.
+
+1. Now you project should be ready for development.
+
+1. Work and/or modify your project's contents
 
   1. Update all README.md files, i.e. changing project name
 
