@@ -36,6 +36,7 @@ cd $SRC_DIR
 if [ -f $TAR_FILE ] ; then
   rm -f $TAR_FILE
 fi
+# Adding every file that is not under .git directory
 for f in $( find . | grep -ve ".git\/\.*" ) ; do
   if [ -f $f ] ; then
     tar rf $TAR_FILE $f
