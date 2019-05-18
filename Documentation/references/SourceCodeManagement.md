@@ -2,7 +2,7 @@
 
 ## Branching and Merging Model
 
-  ![](res/images/gitflow.png)
+  ![Git Flow Diagram](../res/images/gitflow.png)
 
   - Use Git Flow. See image above
   - Master branch contains stable code
