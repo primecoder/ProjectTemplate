@@ -6,21 +6,18 @@ Providing a template for starting a new project
 ```
 .
 ├── Documentation
-│   ├── res
-│   │   └── images
-├── README.md
+│   ├── references
+│   └── res
+│       └── images
+├── Journal
 ├── dev
 │   ├── android
-│   │   └── README.md
 │   ├── artworks
-│   │   └── README.md
 │   ├── iOS
-│   │   └── README.md
 │   └── playground
-│       └── README.md
+│       ├── ProjectForPlayground
+│       └── ProjectPlayground.xcworkspace
 └── script
-    ├── README.md
-    └── setup-project
 ```
 
 ## How to use ProjectTemplate
