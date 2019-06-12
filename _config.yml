@@ -1,1 +1,4 @@
-theme: jekyll-theme-tactile
+theme: jekyll-theme-architect
+
+# Google Analytics
+google_analytics: UA-141727364-1
