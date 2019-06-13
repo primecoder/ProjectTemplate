@@ -1,58 +1,49 @@
 #!/bin/bash
 #
-# Copy directory structure and template files to the destination path.
+# Setup directory structure and files to the destination path.
 #
 
-function usage() {
-  echo $ $0 [DESTINATION_PATH]
-}
-
-function isDir() {
-  echo Looking for $1
-  if [ -d $1 ] ; then
-    return 0
-  else
-    return -1
-  fi
-}
-
 if [ "$1" == "" ] ; then
-  usage
+  echo $ $0 [DESTINATION_PATH]
   exit -1
 fi
 
-SRC_DIR=../
+SRC_DIR=..
 DST_DIR=$1
-CUR_DIR=`pwd`
-TAR_FILE="$DST_DIR/temp.tar"
+CREATED_DATE=`date +"%Y-%m-%d"`
 
-if ! isDir $DST_DIR ; then
+if ! [ -d $DST_DIR ] ; then
   echo "Cannot find directory $DST_DIR"
   exit -1
 fi
 
-echo "Creating archive file."
-cd $SRC_DIR
-if [ -f $TAR_FILE ] ; then
-  rm -f $TAR_FILE
-fi
-for f in $( find . | grep -ve ".git\/\.*" ) ; do
-  if [ -f $f ] ; then
-    tar rf $TAR_FILE $f
-  fi
-done
+mkdir -p $DST_DIR/Documentation/references
+mkdir -p $DST_DIR/Documentation/res/images
+mkdir -p $DST_DIR/Journal
+mkdir -p $DST_DIR/blog
+mkdir -p $DST_DIR/dev
+mkdir -p $DST_DIR/dev/apple
+mkdir -p $DST_DIR/dev/android
+mkdir -p $DST_DIR/dev/artwork
+mkdir -p $DST_DIR/script
 
-echo "Writing files to $DST_DIR..."
-tar -C $DST_DIR -xvkf $TAR_FILE
+# Copying documentation files.
+cp -Rvn $SRC_DIR/Documentation/* $DST_DIR/Documentation
 
-echo "Clean up"
-# Remove the archive file.
-if [ -f $TAR_FILE ] ; then
-  rm -f $TAR_FILE
-fi
-# Remove the setup script.
-if [ -f $DST_DIR/script/$0 ] ; then
-  rm -f $DST_DIR/script/$0
+# Create initial template for Journal files.
+if ! [ -f $DST_DIR/Journal/YYYY-MM-DD-Title.md ] ; then
+  echo "# YYYY-MM-DD TITLE" >> $DST_DIR/Journal/YYYY-MM-DD-Title.md
+  echo "$CREATED_DATE Project Created" >> $DST_DIR/Journal/$CREATED_DATE-ProjectCreated.md
+  echo "Project created from PrimeCoder's Project Template." >> $DST_DIR/Journal/$CREATED_DATE-ProjectCreated.md
+  echo "For more information, visit https://primecoder.github.io/ProjectTemplate/" >> $DST_DIR/Journal/$CREATED_DATE-ProjectCreated.md
 fi
 
+# Create initial template for blog files.
+if ! [ -f $DST_DIR/blog/YYYY-MM-DD-Title.md ] ; then
+  echo "# YYYY-MM-DD TITLE" >> $DST_DIR/blog/YYYY-MM-DD-Title.md
+fi
+
+echo 
 echo "Done"
+echo "Destination project now contains:"
+find $DST_DIR -type d

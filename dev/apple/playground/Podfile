@@ -1,0 +1,13 @@
+# Podfile
+
+platform :ios,'12.2'
+use_frameworks!
+
+workspace 'ProjectPlayground'
+project 'ProjectForPlayground/ProjectForPlayground.xcodeproj'
+
+target 'ProjectForPlayground' do
+    pod 'SwiftyJSON'
+    pod 'ReactiveSwift'
+    pod 'ReactiveCocoa'
+end
