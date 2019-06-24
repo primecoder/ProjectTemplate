@@ -21,10 +21,12 @@ workspace 'main'
 #   |- PROJECT-B
 #        +- PROJECT-B.xcodeproj
 #
-# - To use this Podfile:
+# To use this Podfile:
 #   - Open main.xcworkspace
 #   - Add project(s) to workspace
 #   - Rename 'PROJECTNAME' to the name of your Xcode project
+#   - Run `$ pod install` from command-line
+#   - Close and re-open Xcode
 #
 target 'PROJECTNAME' do
     project 'PROJECTNAME/PROJECTNAME.xcodeproj'
