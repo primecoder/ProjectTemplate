@@ -43,6 +43,9 @@ if ! [ -f $DST_DIR/blog/YYYY-MM-DD-Title.md ] ; then
   echo "# YYYY-MM-DD TITLE" >> $DST_DIR/blog/YYYY-MM-DD-Title.md
 fi
 
+# Copy initial Xcode workspace and project.
+cp -Rvn $SRC_DIR/dev/apple/* $DST_DIR/dev/apple
+
 echo 
 echo "Done"
 echo "Destination project now contains:"

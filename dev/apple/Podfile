@@ -1,0 +1,52 @@
+
+platform :ios, '12.2'
+
+#
+# The default workspace name is 'main'. If your workspace has different name,
+# rename it to the name of you rworkspace.
+#
+workspace 'main'
+
+#
+# - This Podfile should reside at the same directory structure as the workspace file
+# - All Xcode projects share the same single Podfile
+# - Each Xcode project has its own directory and the Xcodeproj file resides under this
+#   directory, for example:
+#
+#   .
+#   |- main.xcworkspace
+#   |- Podfile
+#   |- PROJECT-A
+#   |    +- PROJECT-A.xcodeproj
+#   |- PROJECT-B
+#        +- PROJECT-B.xcodeproj
+#
+# - To use this Podfile:
+#   - Open main.xcworkspace
+#   - Add project(s) to workspace
+#   - Rename 'PROJECTNAME' to the name of your Xcode project
+#
+target 'PROJECTNAME' do
+    project 'PROJECTNAME/PROJECTNAME.xcodeproj'
+    use_frameworks!
+
+    pod 'SwiftLint'
+
+    pod 'CocoaLumberjack/Swift'
+    # pod 'NSLogger/Swift'
+    # pod 'SwiftyBeaver'
+end
+
+target 'PROJECTNAMETests' do
+    project 'PROJECTNAME/PROJECTNAME.xcodeproj'
+    use_frameworks!
+
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'SwiftLint'
+
+    pod 'CocoaLumberjack/Swift'
+    # pod 'NSLogger/Swift'
+    # pod 'SwiftyBeaver'
+end
+
