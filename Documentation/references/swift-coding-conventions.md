@@ -1,6 +1,5 @@
 Source: [Github Development Standard/Swift Coding Conventions](https://github.com/MLSDev/development-standards/blob/master/platform/ios/swift-coding-conventions.md)
 
-
 # Swift Coding Conventions
 
 1. [API Design guidelines](#design-guidelines)
@@ -26,13 +25,13 @@ Source: [Github Development Standard/Swift Coding Conventions](https://github.co
 
 ## Swift API Design Guidelines
 
-Strictly follow [Swift 3 API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
+Strictly follow [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
 
 ## Tabs and indentation
 
-* Use spaces instead of tabs. Use Xcode setting, that replaces tab with 4 spaces(default).
-* Always try to limit Line length to 100 characters.
-* End files with a newline
+- Use spaces instead of tabs. Use Xcode setting, that replaces tab with 4 spaces(default).
+- Always try to limit Line length to 100 characters.
+- End files with a newline
 
 ## Comments
 
@@ -105,6 +104,7 @@ let MAX_PR_COUNT = 5
 ```
 
 ### Methods
+
 For functions and methods, prefer named parameters unless intent and context are completely clear. Follow Apple convention to always name first argument in the name of the method:
 
 ```swift
@@ -202,7 +202,7 @@ request.perform(success: { responseObject, _ in
 })
 ```
 
-Do not bluntly use `weak self` in every closure - figure out, where it is really needed  - most of the time it happens when closure is stored on your object. In previous examples with UIView animation it is not needed. And even if you do have retain cycles, if your object existance is guaranteed, use `[unowned self]` instead of weak to minimize optionals. Remember, that self is not the only one object, that can be part of retain cycles. If you have multiple arguments in capture list, remember to put weak or unowned before each one, for example:
+Do not bluntly use `weak self` in every closure - figure out, where it is really needed - most of the time it happens when closure is stored on your object. In previous examples with UIView animation it is not needed. And even if you do have retain cycles, if your object existance is guaranteed, use `[unowned self]` instead of weak to minimize optionals. Remember, that self is not the only one object, that can be part of retain cycles. If you have multiple arguments in capture list, remember to put weak or unowned before each one, for example:
 
 ```swift
 let foo = Foo()
@@ -458,7 +458,7 @@ let users = API.Users.get()
 
 ## References
 
-* [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-* [Swift programming language book](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
-* [Github Swift guidelines](https://github.com/github/swift-style-guide)
-* [raywenderlich.com Swift guidelines](https://github.com/raywenderlich/swift-style-guide)
+- [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
+- [Swift programming language book](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
+- [Github Swift guidelines](https://github.com/github/swift-style-guide)
+- [raywenderlich.com Swift guidelines](https://github.com/raywenderlich/swift-style-guide)
